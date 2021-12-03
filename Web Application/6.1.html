@@ -1,0 +1,85 @@
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="6.1.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" charset="utf-8"></script>
+</head>
+<body>
+
+<form name="myForm" action="action.php" onsubmit="return validateForm()" method="post" class="login-form">
+    <h1>Registration Form</h1>
+    <div class="txtb">
+        <input type="text" name="fname">
+        <span data-placeholder="Name"></span>
+    </div>
+    <div class="txtb">
+        <input type="text" name="fcol">
+        <span data-placeholder="Age"></span>
+    </div>
+    <div class="txtb">
+        <input type="text" name="fDept">
+        <span data-placeholder="City"></span>
+    </div>
+    <div class="txtb">
+        <input type="text" name="fAdd">
+        <span data-placeholder="State"></span>
+    </div>
+    <div class="txtb">
+        <input type="text" name="fnumb">
+        <span data-placeholder="Phone Number"></span>
+    </div>
+    <div class="txtb">
+        <input type="text" name="fema">
+        <span data-placeholder="Email-Id"></span>
+    </div>
+    <input type="submit" class="logbtn" value="Login">
+
+</form>
+
+<script type="text/javascript">
+    function validateForm() {
+        var x1 = document.forms["myForm"]["fname"].value;
+        if (x1 == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+        var x2 = document.forms["myForm"]["fcol"].value;
+        if (x2 == "") {
+            alert("Age must be filled out");
+            return false;
+        }
+        var x3 = document.forms["myForm"]["fDept"].value;
+        if (x3 == "") {
+            alert("City must be filled out");
+            return false;
+        }
+        var x4 = document.forms["myForm"]["fAdd"].value;
+        if (x4 == "") {
+            alert("State must be filled out");
+            return false;
+        }
+        var x6 = document.forms["myForm"]["fnumb"].value;
+        if (x6 == "") {
+            alert("Phone Number must be filled out");
+            return false;
+        }
+        var x7 = document.forms["myForm"]["fema"].value;
+        if (x7 == "") {
+            alert("Email-Id must be filled out");
+            return false;
+        } 
+    }
+    $(".txtb input").on("focus",function(){
+        $(this).addClass("focus");
+    });
+
+    $(".txtb input").on("blur",function(){
+        if($(this).val() == "")
+            $(this).removeClass("focus");
+    });
+
+</script>
+
+
+</body>
+</html>
